@@ -1,7 +1,10 @@
-<div>
-    <div class="input-container">
-        <label>Search:</label>
-        <input type="text" [formControl]="searchInput" placeholder="Search..." />
+<div class="list-body">
+    <div class="list-search">
+        <div class="input-container">
+            <label>Search:</label>
+            <input type="text" [formControl]="searchInput" placeholder="Search..." />
+        </div>    
+        <app-share></app-share>
     </div>
     <div *ngIf="questionsList.length > 0" class="list-container">
         <table (scroll)="onTableDataScroll($event)">
@@ -20,3 +23,5 @@
         </table>
     </div>
 </div>
+
+<app-share-modal></app-share-modal>

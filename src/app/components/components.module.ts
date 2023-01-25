@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { HealthCheckComponent } from './health-check/health-check.component';
-import { ShareComponent } from './share/share.component';
+import { ShareModalComponent } from './share-modal/share-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ShareComponent } from './share/share.component';
 
 
 
@@ -11,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     SpinnerComponent,
     HealthCheckComponent,
+    ShareModalComponent,
     ShareComponent,
   ],
   imports: [
@@ -20,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   exports: [
     SpinnerComponent,
     HealthCheckComponent,
+    ShareModalComponent,
     ShareComponent,
   ]
 })

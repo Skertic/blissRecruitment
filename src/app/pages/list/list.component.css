@@ -1,3 +1,15 @@
+.list-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-search {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+
 .list-container {
     display: flex;
     flex-direction: column;
