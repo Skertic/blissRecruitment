@@ -1,7 +1,7 @@
 <div>
-    <div>
-        <label>Pesquisar:</label>
-        <input type="text" [formControl]="searchInput" placeholder="" />
+    <div class="input-container">
+        <label>Search:</label>
+        <input type="text" [formControl]="searchInput" placeholder="Search..." />
     </div>
     <div *ngIf="questionsList.length > 0" class="list-container">
         <table (scroll)="onTableDataScroll($event)">

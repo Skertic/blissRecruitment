@@ -8,3 +8,18 @@ body {
 .button {
     cursor: pointer;
 }
+input {
+    height: 24px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #666666
+}
+.input-container {
+    display:flex;
+    flex-direction: row;
+    gap:8px
+}
+.input-container label {
+    display: flex;
+    align-items: center;
+}

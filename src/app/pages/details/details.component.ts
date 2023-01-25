@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionModel } from 'src/app/interfaces/question.model';
+import { ModalShareService } from 'src/app/services/modal-share.service';
 import { QuestionsService } from 'src/app/services/questions.service';
 
 @Component({
@@ -17,6 +18,7 @@ export class DetailsComponent {
     private readonly questionsService: QuestionsService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
+    private readonly modalShareService: ModalShareService,
   ) {
     this.maxVotes = 0;
     this.activatedRoute.params.forEach(params => {
@@ -46,5 +48,9 @@ export class DetailsComponent {
     const date = new Date(d);
 
     return date;
+  }
+
+  public onClickSharePage(): void {
+    this.modalShareService.open();
   }
 }

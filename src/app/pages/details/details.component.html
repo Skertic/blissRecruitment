@@ -8,6 +8,7 @@
             <p><span>Question</span>: {{questionDetails.question}}</p>
             <p><span>Published at</span>: {{treatDate(questionDetails.published_at).toLocaleDateString()}}</p>
         </div>
+        <div (click)="onClickSharePage()">share</div>
     </div>
     <div class="card-body">
         <div *ngFor="let choice of questionDetails.choices" class="card-body-choice">
@@ -20,3 +21,5 @@
         </div>
     </div>
 </div>
+
+<app-share></app-share>

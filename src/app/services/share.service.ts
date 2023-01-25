@@ -14,7 +14,7 @@ export class ShareService {
     private readonly http: HttpClient
   ) { }
 
-  public checkApiHealth(): Observable<any> {
-    return this.http.post<any>(`${environment.apiBaseUrl}/${this.endpoint}`, {});
+  public sharePage(email: string, url: string): Observable<any> {
+    return this.http.post<any>(`${environment.apiBaseUrl}/${this.endpoint}?destination_email=${email}&content_url=${environment.apiBaseUrl + url}`, {});
   }
 }

@@ -4,6 +4,7 @@ import { RetryConnectionComponent } from './retry-connection/retry-connection.co
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { DetailsComponent } from './details/details.component';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { DetailsComponent } from './details/details.component';
   ],
   imports: [
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    ComponentsModule
   ],
   exports: [
     ListComponent,
