@@ -16,6 +16,11 @@ export class ListComponent implements OnInit {
   public limit = 10;
   public offset = 0;
 
+  /**
+   * Creates an instance of list component.
+   * @param questionsService 
+   * @param router 
+   */
   constructor(
     private readonly questionsService: QuestionsService,
     private readonly router: Router
@@ -24,6 +29,9 @@ export class ListComponent implements OnInit {
     this.getQuestionsList();
   }
 
+  /**
+   * on init
+   */
   ngOnInit(): void {
     this.searchInput.valueChanges.pipe(
       debounceTime(500),
@@ -33,18 +41,31 @@ export class ListComponent implements OnInit {
     });
   }
 
+  /**
+   * Gets questions list
+   * @param [filterValue] 
+   */
   private getQuestionsList(filterValue?: string): void {
     this.questionsService.getList(this.limit, this.offset, filterValue).subscribe((response: QuestionModel[]) => {
       this.questionsList = response;
     });
   }
 
+  /**
+   * Treats date
+   * @param d 
+   * @returns date of date 
+   */
   public treatDate(d: string): Date {
     const date = new Date(d);
 
     return date;
   }
 
+  /**
+   * Determines whether table data scroll on
+   * @param event 
+   */
   public onTableDataScroll(event: Event) {
     let table = event.target as HTMLTableElement;
     if (table.scrollHeight - table.scrollTop === table.clientHeight) {
@@ -53,6 +74,10 @@ export class ListComponent implements OnInit {
     }
   }
 
+  /**
+   * click navigate to details
+   * @param id 
+   */
   public onClickNavigateToDetails(id: number): void {
     this.router.navigate(['details/'+id]);
   }

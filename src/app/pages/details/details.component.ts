@@ -14,6 +14,13 @@ export class DetailsComponent {
   public paramId!: number;
   public maxVotes: number;
 
+  /**
+   * Creates an instance of details component.
+   * @param questionsService 
+   * @param activatedRoute 
+   * @param router 
+   * @param modalShareService 
+   */
   constructor(
     private readonly questionsService: QuestionsService,
     private activatedRoute: ActivatedRoute,
@@ -27,6 +34,9 @@ export class DetailsComponent {
     this.getDetails();
   }
 
+  /**
+   * Gets details
+   */
   private getDetails(): void {
     this.questionsService.getQuestion(this.paramId).subscribe((response: QuestionModel) => {
       this.questionDetails = response;
@@ -40,16 +50,27 @@ export class DetailsComponent {
     });
   }
 
+  /**
+   * Go to listing
+   */
   public goToListing(): void {
     this.router.navigate(['list']);
   }
   
+  /**
+   * Treats date
+   * @param d 
+   * @returns date of date 
+   */
   public treatDate(d: string): Date {
     const date = new Date(d);
 
     return date;
   }
 
+  /**
+   * Determines whether click share page on
+   */
   public onClickSharePage(): void {
     this.modalShareService.open();
   }

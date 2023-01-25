@@ -13,6 +13,12 @@ export class ShareModalComponent implements OnInit {
   public isOpen = false;
   public shareEmailControl: FormControl;
 
+  /**
+   * Creates an instance of share modal component.
+   * @param modalShareService 
+   * @param router 
+   * @param shareService 
+   */
   constructor(
     private readonly modalShareService: ModalShareService,
     private readonly router: Router,
@@ -21,6 +27,9 @@ export class ShareModalComponent implements OnInit {
     this.shareEmailControl = new FormControl('', Validators.email);
   }
 
+  /**
+   * on init
+   */
   ngOnInit() {
     this.modalShareService.modalSubject.subscribe((isOpen: boolean) => {
       this.shareEmailControl.setValue('');
@@ -28,14 +37,23 @@ export class ShareModalComponent implements OnInit {
     });
   }
 
+  /**
+   * Determines whether click close modal on
+   */
   public onClickCloseModal(): void {
     this.closeModal();
   }
 
+  /**
+   * Closes modal
+   */
   private closeModal(): void {
     this.modalShareService.close();
   }
 
+  /**
+   * On Click makes request to share
+   */
   public onClickShare(): void {
     this.shareService.sharePage(this.shareEmailControl.value, this.router.url).subscribe(() => {
       this.closeModal();
