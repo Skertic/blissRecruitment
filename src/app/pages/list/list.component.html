@@ -1,1 +1,22 @@
-<p>list works!</p>
+<div>
+    <div>
+        <label>Pesquisar:</label>
+        <input type="text" [formControl]="searchInput" placeholder="" />
+    </div>
+    <div *ngIf="questionsList.length > 0" class="list-container">
+        <table (scroll)="onTableDataScroll($event)">
+            <thead>
+                <th>Id</th>
+                <th>Question</th>
+                <th>Published at</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let q of questionsList">
+                    <td>{{q.id}}</td>
+                    <td>{{q.question}}</td>
+                    <td>{{treatDate(q.published_at).toLocaleDateString()}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -10,9 +10,7 @@ import { HealthCheckComponent } from './health-check/health-check.component';
     SpinnerComponent,
     HealthCheckComponent,
   ],
-  imports: [
-    CommonModule
-  ],
+  imports: [ ],
   exports: [
     SpinnerComponent,
     HealthCheckComponent,
