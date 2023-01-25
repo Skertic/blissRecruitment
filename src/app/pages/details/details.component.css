@@ -1,0 +1,45 @@
+.card {
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    margin: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card-header {
+    display: flex; 
+    flex-direction: row; 
+    gap: 16px;
+}
+.card-header-body p span {
+    font-weight: 700;
+}
+
+.card-body {
+    display: flex; 
+    flex-direction: row;
+    gap:32px;
+    justify-content: center;
+}
+.card-body-choice {
+    display: flex; 
+    flex-direction: column;
+    gap:16px
+}
+.barVotes-bg {
+    height: 200px;
+    width: 40px;
+    background-color: rgb(102, 102, 102, 0.2);
+    align-items: end;
+    display: flex;
+}
+.barVotes-fill {
+    width: 100%;
+    background-color: #666666;
+    text-align: center;
+}
+.barVotes-fill span {
+    color: white;
+}

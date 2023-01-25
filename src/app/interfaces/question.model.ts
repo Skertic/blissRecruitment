@@ -1,6 +1,6 @@
 import { ChoiceModel } from "./choice-model";
 
-export interface QuestionListModel {
+export interface QuestionModel {
     id: number,
     question: string,
     image_url: string,

@@ -11,7 +11,7 @@
                 <th>Published at</th>
             </thead>
             <tbody>
-                <tr *ngFor="let q of questionsList">
+                <tr *ngFor="let q of questionsList" (click)="onClickNavigateToDetails(q.id)">
                     <td>{{q.id}}</td>
                     <td>{{q.question}}</td>
                     <td>{{treatDate(q.published_at).toLocaleDateString()}}</td>

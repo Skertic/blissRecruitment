@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { HealthCheckComponent } from './health-check/health-check.component';
+import { ShareComponent } from './share/share.component';
 
 
 
@@ -9,6 +10,7 @@ import { HealthCheckComponent } from './health-check/health-check.component';
   declarations: [
     SpinnerComponent,
     HealthCheckComponent,
+    ShareComponent,
   ],
   imports: [ ],
   exports: [

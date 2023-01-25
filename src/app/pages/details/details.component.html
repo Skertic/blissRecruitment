@@ -1,0 +1,22 @@
+<h4 (click)="goToListing()" class="button"><- Voltar</h4>
+<div *ngIf="questionDetails" class="card">
+    <div class="card-header">
+        <div>
+            <img [src]="questionDetails.thumb_url" onerror=""/>
+        </div>
+        <div class="card-header-body">
+            <p><span>Question</span>: {{questionDetails.question}}</p>
+            <p><span>Published at</span>: {{treatDate(questionDetails.published_at).toLocaleDateString()}}</p>
+        </div>
+    </div>
+    <div class="card-body">
+        <div *ngFor="let choice of questionDetails.choices" class="card-body-choice">
+            <span>{{choice.choice}}</span>
+            <div class="barVotes-bg">
+                <div class="barVotes-fill" [ngStyle]="{'height': choice.votes/maxVotes*200 + 'px'}">
+                    <span>{{choice.votes}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
